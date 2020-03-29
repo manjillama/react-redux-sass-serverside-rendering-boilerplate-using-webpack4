@@ -33,8 +33,8 @@ export default (req, store, context) => {
 
   return `
     <!DOCTYPE html>
-    <html>
-      <head lang="en">
+    <html lang="en">
+      <head>
         <title>Boilerplate for server-side React App</title>
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
