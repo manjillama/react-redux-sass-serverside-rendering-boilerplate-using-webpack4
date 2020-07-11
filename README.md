@@ -1,4 +1,5 @@
-# Boilerplate for server-side react/redux application w/ webpack 4
+# Server-side react app
+Boilerplate setup for server-side react app with routing, redux, sass, etc using webpack 4 with SEO and code-splitting support
 
 ## Quick Start
 
@@ -16,7 +17,6 @@ npm run build
 # Server runs on http://localhost:3001
 ```
 
-### Author
+## Author
 
-Manjil Tamang
-[Find Me](https://www.linkedin.com/in/manjiltamang/)
+[Manjil Tamang](https://www.linkedin.com/in/manjiltamang/)
