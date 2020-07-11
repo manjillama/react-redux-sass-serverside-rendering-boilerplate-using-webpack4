@@ -10,7 +10,7 @@ module.exports = {
   // Tell webpack where to put the generated output file
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
   },
   resolve: {
     // Resolving to absolute path with src folder as root
@@ -20,21 +20,18 @@ module.exports = {
     rules: [
       {
         // Only attempt to run babel on javascript files
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         // Don't run babel over certain dir, files | using regex
         exclude: /node_modules/,
       },
       {
         test: /\.s?css/,
-        use: [
-          'css-loader',
-          'sass-loader',
-        ]
-      }
-    ]
+        use: ['css-loader', 'sass-loader'],
+      },
+    ],
   },
   // Don't bundle any libraries from /node_modules into our
   // output bundle makes our server start up bit faster and size a lot smaller
-  externals: [webpackNodeExternals()]
+  externals: [webpackNodeExternals()],
 };
