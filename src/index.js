@@ -1,15 +1,14 @@
-require('dotenv').config();
-
 import 'babel-polyfill'; // to solve regeneratorRunTime not defined error
 import express from 'express';
+import proxy from 'express-http-proxy';
+import { matchRoutes } from 'react-router-config';
+import cookieParser from 'cookie-parser';
 
 import renderer from './helpers/renderer';
 import createStore from './helpers/createStore';
-
-import cookieParser from 'cookie-parser';
-import proxy from 'express-http-proxy';
-import { matchRoutes } from 'react-router-config';
 import Routes from './client/Routes';
+
+require('dotenv').config();
 
 const app = express();
 
@@ -45,17 +44,16 @@ app.get('*', async (req, res) => {
    */
   const promises = matchRoutes(Routes, req.path)
     .map(({ route, match }) => {
-      return route.loadData
-        ? route.loadData(store, match.params, req.query)
-        : null;
+      return route.loadData ? route.loadData(store, match.params, req.query) : null;
     })
     .map((promise) => {
       // interating through all to-be rendered components loadData funtions
       if (promise) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           promise.then(resolve).catch(resolve);
         });
       }
+      return null;
     });
 
   /*

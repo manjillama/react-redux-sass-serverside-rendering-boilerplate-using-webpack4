@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from 'client/components/Navbar.jsx';
 import { renderRoutes } from 'react-router-config';
 import { Helmet } from 'react-helmet';
 import './css/main.scss';
@@ -27,6 +28,7 @@ class App extends Component {
           <title>Home</title>
         </Helmet>
 
+        <Navbar />
         {renderRoutes(route.routes)}
       </div>
     );

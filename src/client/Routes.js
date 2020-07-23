@@ -1,15 +1,14 @@
-import React from 'react';
-import HomePage  from './pages/HomePage';
-
-import NotFoundPage  from './pages/404Page';
-import App  from './App';
+import HomePage from './pages/HomePage';
+import UserPage from './pages/UsersPage';
+import NotFoundPage from './pages/404Page';
+import App from './App';
 
 /*
-* react-router-config for pre server-side data loading
-* @see https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
-* Figure out what component would have rendered (based on url)
-* call a 'loadData' method attached to each of those components
-*/
+ * react-router-config for pre server-side data loading
+ * @see https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
+ * Figure out what component would have rendered (based on url)
+ * call a 'loadData' method attached to each of those components
+ */
 export default [
   {
     ...App,
@@ -17,11 +16,15 @@ export default [
       {
         ...HomePage,
         path: '/',
-        exact: true
+        exact: true,
+      },
+      {
+        ...UserPage,
+        path: '/users',
       },
       {
         ...NotFoundPage,
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

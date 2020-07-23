@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
+import users from './users';
 
 export default combineReducers({
-  auth: function(state = {}, action){
-    return state;
-  }
+  // your reducers
+  users,
 });

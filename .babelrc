@@ -1,4 +1,13 @@
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
-  "plugins": ["@loadable/babel-plugin"]
+  "plugins": [
+    "@loadable/babel-plugin",
+    [
+      // https://medium.com/@sherryhsu/how-to-change-relative-paths-to-absolute-paths-for-imports-32ba6cce18a5
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
+  ]
 }

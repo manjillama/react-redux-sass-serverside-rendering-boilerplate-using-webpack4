@@ -1,21 +1,37 @@
 # Server-side react app
-Boilerplate setup for server-side react app with routing, redux, sass, etc using webpack 4 with SEO and code-splitting support
+
+Boilerplate setup for server-side react app with routing, redux, sass, etc using webpack 4 with SEO and code-splitting support.
 
 ## Quick Start
 
-``` bash
+```bash
 # Install dependencies for server
 npm install
+```
 
+```bash
 # Run application in development mode
-# Client-side bundle files is built inside public folder and server-side files is built inside build folder
+# Client-side bundle files is built inside public folder and server-side files is built inside build folder. The folders and bundle files will be created if not already exist
 npm run dev
+```
 
+```bash
 # For production ready built application
 npm run build
-
-# Server runs on http://localhost:3001
 ```
+
+```bash
+# Launches the test runner.
+npm run test
+```
+
+```bash
+# Run application in production mode
+npm run start
+```
+
+> Server runs on http://localhost:3001 > <br/>
+> Never commit .env file to github on production application.
 
 ## Author
 

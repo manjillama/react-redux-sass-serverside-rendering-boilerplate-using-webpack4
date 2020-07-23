@@ -33,6 +33,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new LoadablePlugin(),
-    new webpack.EnvironmentPlugin(['API_SERVER', 'AUTHOR']), //https://webpack.js.org/plugins/environment-plugin/
+    new webpack.EnvironmentPlugin(['API_SERVER', 'AUTHOR']), // https://webpack.js.org/plugins/environment-plugin/
   ],
 };

@@ -1,7 +1,7 @@
+import axios from 'axios';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../client/reducers';
-import axios from 'axios';
 
 export default (req) => {
   /*
@@ -14,10 +14,6 @@ export default (req) => {
   /*
    * Creating server side redux store
    */
-  const store = createStore(
-    reducers,
-    {},
-    applyMiddleware(thunk.withExtraArgument(axiosInstance))
-  );
+  const store = createStore(reducers, {}, applyMiddleware(thunk.withExtraArgument(axiosInstance)));
   return store;
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 
 const NotFoundPage = () => (
-  <div>
-    <h1>Opps page not found</h1>
+  <div className="container-lg">
+    <h2>Opps page not found :(</h2>
   </div>
 );
 
 export default {
-  component: NotFoundPage
-}
+  component: NotFoundPage,
+};

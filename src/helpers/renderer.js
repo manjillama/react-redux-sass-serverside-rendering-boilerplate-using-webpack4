@@ -2,11 +2,11 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Routes from '../client/Routes';
 import { renderRoutes } from 'react-router-config';
 import serialize from 'serialize-javascript'; // preventing xss attacks
 import { Helmet } from 'react-helmet';
 import { ChunkExtractor } from '@loadable/server';
+import Routes from '../client/Routes';
 import { isEmpty } from '../utils/utils';
 
 const path = require('path');
@@ -22,21 +22,20 @@ export default (req, store, context) => {
   /*
    * Attaching location along with query params to SSR router
    */
-  const path =
+  const locationPath =
     req.path +
     (isEmpty(req.query)
       ? ''
-      : '?' +
-        Object.keys(req.query)
-          .map((key) => key + '=' + req.query[key])
-          .join('&'));
+      : `?${Object.keys(req.query)
+          .map((key) => `${key}=${req.query[key]}`)
+          .join('&')}`);
   /*
    * All html dom created by react-redux will be converted into string and is passed into content variable
    */
-  const App = function () {
+  const App = () => {
     return (
       <Provider store={store}>
-        <StaticRouter location={path} context={context}>
+        <StaticRouter location={locationPath} context={context}>
           <div>{renderRoutes(Routes)}</div>
         </StaticRouter>
       </Provider>
@@ -84,9 +83,7 @@ export default (req, store, context) => {
 
         <meta charset="utf-8">
         <meta name="locale" content="en">
-        <meta property="og:url" content="${req.protocol}://${req.get('host')}${
-    req.originalUrl
-  }">
+        <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         ${styleTags}
       </head>

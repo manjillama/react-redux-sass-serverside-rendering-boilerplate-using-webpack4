@@ -74,3 +74,20 @@ hr {
     padding: 0 32px;
   }
 }
+/*
+* List
+*/
+ul {
+  &.neutralize {
+    list-style-type: none;
+    padding: 0;
+  }
+  &.list-group {
+    border-radius: 0.25rem;
+    li {
+      padding: 0.75rem 1.25rem;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+  }
+}
