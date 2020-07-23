@@ -2,6 +2,12 @@
 
 Boilerplate setup for server-side react app with routing, redux, sass, etc using webpack 4 with SEO and code-splitting support.
 
+<div align="center">
+  
+[![](https://github.com/manjillama/react-redux-ssr-boilerplate/workflows/CI/badge.svg)](https://github.com/manjillama/react-redux-ssr-boilerplate/actions)
+
+</div>
+
 ## Quick Start
 
 ```bash
