@@ -36,7 +36,7 @@ npm run test
 npm run start
 ```
 
-> Server runs on http://localhost:3001 > <br/>
+> Server runs on http://localhost:3001 <br/>
 > Never commit .env file to github on production application.
 
 ## Author
