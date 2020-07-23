@@ -1,6 +1,9 @@
 # Server-side react app
 
 Boilerplate setup for server-side react app with routing, redux, sass, etc using webpack 4 with SEO and code-splitting support.
+  
+[![](https://github.com/manjillama/react-redux-ssr-boilerplate/workflows/build/badge.svg)](https://github.com/manjillama/react-redux-ssr-boilerplate/actions)
+[![](https://img.shields.io/badge/code%20style-airbnb-brightgreen)](https://github.com/airbnb/javascript)
 
 ## Quick Start
 
@@ -30,7 +33,7 @@ npm run test
 npm run start
 ```
 
-> Server runs on http://localhost:3001 > <br/>
+> Server runs on http://localhost:3001 <br/>
 > Never commit .env file to github on production application.
 
 ## Author
